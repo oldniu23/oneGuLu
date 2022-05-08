@@ -14,8 +14,7 @@ import { inject, Ref } from "vue";
 export default {
   //App.vue里用了provide 这里用了inject 并声明了类型为Ref
   setup() {
-    const menuVisible = inject<Ref<boolean>>("xxx");
-    console.log("xxx为：" + menuVisible.value);
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
@@ -28,6 +27,8 @@ export default {
   background: pink;
   display: flex;
   padding: 16px;
+  justify-content: center;
+  align-items: center;
   // 解决doc页面里aside固定定位遮挡Topnav的问题
   position: relative;
   z-index: 10;
@@ -41,6 +42,15 @@ export default {
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+  }
+  @media (max-width: 500px) {
+    //0-500px 隐藏menu
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }

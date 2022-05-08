@@ -10,7 +10,7 @@ export default {
   setup() {
     const menuVisible = ref(false);
     // 任何人使用menuVisible只需要提供xxx这个名字
-    provide("xxx", menuVisible);
+    provide("menuVisible", menuVisible);
   },
 };
 </script>

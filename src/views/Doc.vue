@@ -30,8 +30,7 @@ import { inject, Ref } from "vue";
 export default {
   //App.vue里用了provide 这里用了inject 并声明了类型为Ref
   setup() {
-    const menuVisible = inject<Ref<boolean>>("xxx");
-    console.log("xxx为：" + menuVisible.value);
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     return { menuVisible };
   },
   components: {
