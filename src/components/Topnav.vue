@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="topnav">
-      <div class="logo">LOGO</div>
+      <div class="logo" @click="toggleMenu">LOGO</div>
       <ul class="menu">
         <li>菜单1</li>
         <li>菜单2</li>
@@ -10,7 +10,18 @@
   </div>
 </template>
 <script lang='ts'>
-export default {};
+import { inject, Ref } from "vue";
+export default {
+  //App.vue里用了provide 这里用了inject 并声明了类型为Ref
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("xxx");
+    console.log("xxx为：" + menuVisible.value);
+    const toggleMenu = () => {
+      menuVisible.value = !menuVisible.value;
+    };
+    return { toggleMenu };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .topnav {
