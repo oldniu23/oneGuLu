@@ -4,8 +4,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./index.css";
 import { createWebHashHistory, createRouter } from "vue-router";
-import Niu from "./components/Niu.vue";
-import Niu2 from "./components/Niu2.vue";
+import Home from "./views/Home.vue";
+import Doc from "./views/Doc.vue";
 
 const history = createWebHashHistory();
 const router = createRouter({
@@ -13,11 +13,11 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: Niu,
+      component: Home,
     },
     {
-      path: "/xxx",
-      component: Niu2,
+      path: "/doc",
+      component: Doc,
     },
   ],
 });
