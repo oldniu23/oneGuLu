@@ -17,6 +17,9 @@ export default {};
   background: pink;
   display: flex;
   padding: 16px;
+  // 解决doc页面里aside固定定位遮挡Topnav的问题
+  position: relative;
+  z-index: 10;
   > .logo {
     max-width: 6em;
     margin-right: auto;
