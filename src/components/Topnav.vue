@@ -31,7 +31,10 @@ export default {
   justify-content: center;
   align-items: center;
   // 解决doc页面里aside固定定位遮挡Topnav的问题
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   > .logo {
     max-width: 6em;
