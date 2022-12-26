@@ -31,28 +31,31 @@ export default {
         background: #bfbfbf;
         border-radius: $h/2;
         position: relative;
+
+        > span{
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: $h2;
+            width: $h2;
+            background: white;
+            border-radius: $h2/2;
+            transition: all 250ms;
+        }
+        // checked 白球往右 背景变蓝
+        &.checked {
+            background: #1890ff;
+            > span {
+                left: calc(100% - #{$h2} - 2px);
+            }
+        }
+        &:active{
+            >span{width: $h2+4px;}
+        }
+        &.checked:active{
+            >span{width: $h2+4px;margin-left: -4px;}
+        }
     }
-    span{
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        height: $h2;
-        width: $h2;
-        background: white;
-        border-radius: $h2/2;
-        transition: all 250ms;
-    }
-    // checked 白球往右 背景变蓝
-    button.checked {
-        background: #1890ff;
-    }
-    button.checked > span {
-        left: calc(100% - #{$h2} - 2px);
-    }
-    button:active{
-        >span{width: $h2+4px;}
-    }
-    button.checked:active{
-        >span{width: $h2+4px;margin-left: -4px;}
-    }
+
+
 </style>
