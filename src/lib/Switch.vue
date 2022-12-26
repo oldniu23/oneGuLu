@@ -38,6 +38,7 @@ export default {
         width: $h2;
         background: white;
         border-radius: $h2/2;
+        transition: left 250ms;
     }
     // checked 白球往右 背景变蓝
     button.checked {
