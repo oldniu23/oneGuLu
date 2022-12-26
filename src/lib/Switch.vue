@@ -1,20 +1,22 @@
 <template>
     <div>
-       <button @click="toggle" :class="{checked}"><span></span></button>
+       <button @click="toggle" :class="{checked: value}"><span></span></button>
     </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
 
 export default {
-    setup(){
-        // 常量x 用于控制class(checked) toggle用于切换x的value
-        const checked = ref(false)
+    props: {
+        value: Boolean
+    },
+    setup(props,context){
+        // props-value 用于控制class(checked) toggle用于切换props的value
         const toggle = ()=>{
-            checked.value = !checked.value
+            context.emit('input',!props.value)
+            console.log(props.value,"????");
         }
-        return {checked,toggle}
+        return {toggle}
     }
 }
 </script>
