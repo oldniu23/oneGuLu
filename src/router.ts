@@ -1,7 +1,7 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import SwitchDemo from "./components/SwitchDemo.vue"
+// import SwitchDemo from "./components/SwitchDemo.vue"
 import ButtonDemo from "./components/ButtonDemo.vue"
 import DialogDemo from "./components/DialogDemo.vue"
 import TabsDemo from "./components/TabsDemo.vue"
@@ -21,7 +21,12 @@ export const router = createRouter({
       component: Doc,
       children:[
         {path: '', component: DocDemo},
-        {path: 'switch', component: SwitchDemo },
+        // {
+        //   path:"",
+        //   redirect:"ButtonDemo"
+        // 被重定向到的路由可能需要加一个name:"ButtonDemo"
+        // },
+        {path: 'switch', component: () => import ("./components/SwitchDemo.vue") },
         {path: 'button', component: ButtonDemo },
         {path: 'dialog', component: DialogDemo },
         {path: 'tabs', component: TabsDemo}
