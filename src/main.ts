@@ -1,8 +1,9 @@
-//main.js是入口文件
-
+// main.js是入口文件
+// scss文件引用顺序不能乱
+import "./lib/gulu.scss";
+import "./index.scss";
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./index.scss";
 import { router } from "./router";
 
 
