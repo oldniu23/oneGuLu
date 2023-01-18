@@ -2,7 +2,9 @@
     <div>Dialog示例</div>
     <h1>示例1</h1>
     <Button @click="toogle">toggle</Button>
-    <Dialog :visible="x"></Dialog>
+    <Dialog v-model:visible="x" :closeOnClickOverlay="false" 
+        :ok="x1" :cancel="x2"    
+    ></Dialog>
 </template>
 
 <script lang="ts">
@@ -17,7 +19,14 @@ export default {
             // 注意这里是用x.value而不是x
             x.value = !x.value;
         }
-        return { x, toogle }
+        const x1 = () => {
+            return false
+        }
+        const x2 = () => {
+            console.log("cancel...........");
+            
+        }
+        return { x, toogle, x1, x2 }
     }
 }
 </script>

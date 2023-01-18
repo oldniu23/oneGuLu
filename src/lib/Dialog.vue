@@ -1,19 +1,19 @@
 <template>
     <template v-if="visible">   
         <!-- 遮罩层 -->
-        <div class="gulu-dialog-overlay"></div>
+        <div class="gulu-dialog-overlay" @click="onClickOverlay" ></div>
         <!-- 内容区域 -->
             <div class="gulu-dialog-wrapper">
                 <div class="gulu-dialog">
-                <header>标题<span class="gulu-dialog-close"></span></header>
+                <header>标题<span @click="close" class="gulu-dialog-close"></span></header>
                 <main>
                     <p>第一行</p>
                     <p>第二行</p>
                     <p>第三行</p>
                 </main>
                 <footer>
-                    <Button >关闭</Button>
-                    <Button level="main">确定</Button>
+                    <Button @click="cancel">关闭</Button>
+                    <Button level="main" @click="ok">确定</Button>
                 </footer>
             </div>
         </div>
@@ -21,14 +21,48 @@
 </template>
 
 <script lang="ts">
+import func from 'vue-editor-bridge'
 import Button from "./Button.vue"
 export default {
-    components: { Button },
     props: { 
         visible: {
             type: Boolean,
             default: false
-        } 
+        },
+        // 是否点击遮罩层也可以关闭
+        closeOnClickOverlay: {
+            type: Boolean,
+            default: true
+        },
+        ok: {
+            type: Function, 
+        },
+        cancel: {
+            type: Function
+        }
+    },
+    components: { Button },
+    setup(props, context) {
+        const close = () => {
+            context.emit('update:visible', false)
+        }
+        const onClickOverlay = () => {
+            // 如果closeOnclickOverlay是true 那么关闭 否则无响应
+            if(props.closeOnClickOverlay) {
+                close()
+            }
+        }
+        const ok = () => {
+            // 如果点了ok 并且 ok函数的值不为fasle  就关闭
+            if(props.ok && props.ok() !== false) {
+                close()
+            }
+        }
+        const cancel = ()=> {
+            context.emit("cancel")
+            close()
+        }
+        return { close, onClickOverlay, ok, cancel }
     }
 
 }
