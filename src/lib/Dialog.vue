@@ -1,27 +1,36 @@
 <template>
-    <!-- 遮罩层 -->
-    <div class="gulu-dialog-overlay"></div>
-    <!-- 内容区域 -->
-        <div class="gulu-dialog-wrapper">
-            <div class="gulu-dialog">
-            <header>标题<span class="gulu-dialog-close"></span></header>
-            <main>
-                <p>第一行</p>
-                <p>第二行</p>
-                <p>第三行</p>
-            </main>
-            <footer>
-                <Button level="main">关闭</Button>
-                <Button>确定</Button>
-            </footer>
+    <template v-if="visible">   
+        <!-- 遮罩层 -->
+        <div class="gulu-dialog-overlay"></div>
+        <!-- 内容区域 -->
+            <div class="gulu-dialog-wrapper">
+                <div class="gulu-dialog">
+                <header>标题<span class="gulu-dialog-close"></span></header>
+                <main>
+                    <p>第一行</p>
+                    <p>第二行</p>
+                    <p>第三行</p>
+                </main>
+                <footer>
+                    <Button >关闭</Button>
+                    <Button level="main">确定</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+    </template>
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue"
 export default {
-    components: { Button }
+    components: { Button },
+    props: { 
+        visible: {
+            type: Boolean,
+            default: false
+        } 
+    }
+
 }
 </script>
 
