@@ -4,7 +4,11 @@
     <Button @click="toogle">toggle</Button>
     <Dialog v-model:visible="x" :closeOnClickOverlay="false" 
         :ok="x1" :cancel="x2"    
-    ></Dialog>
+    >
+    <div>第一行</div>
+    <div>第二行</div>
+    <div>第三行</div>
+    </Dialog>
 </template>
 
 <script lang="ts">
