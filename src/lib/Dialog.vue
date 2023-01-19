@@ -1,22 +1,25 @@
 <template>
-    <template v-if="visible">   
-        <!-- 遮罩层 -->
-        <div class="gulu-dialog-overlay" @click="onClickOverlay" ></div>
-        <!-- 内容区域 -->
+    <template v-if="visible">  
+        <!-- 把dialog弹框放到body下 -->
+        <Teleport to="body"> 
+            <!-- 遮罩层 -->
+            <div class="gulu-dialog-overlay" @click="onClickOverlay" ></div>
+            <!-- 内容区域 -->
             <div class="gulu-dialog-wrapper">
                 <div class="gulu-dialog">
-                <header>
-                    {{title}}
-                    <span @click="close" class="gulu-dialog-close"></span></header>
-                <main>
-                    <slot />
-                </main>
-                <footer>
-                    <Button @click="cancel">关闭</Button>
-                    <Button level="main" @click="ok">确定</Button>
-                </footer>
+                    <header>
+                        {{title}}
+                        <span @click="close" class="gulu-dialog-close"></span></header>
+                    <main>
+                        <slot />
+                    </main>
+                    <footer>
+                        <Button @click="cancel">关闭</Button>
+                        <Button level="main" @click="ok">确定</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </template>
 </template>
 
