@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="topnav">
-      <div class="logo">LOGO</div>
+      <div class="logo">
+        <!-- LOGO -->
+        <svg class="icon">
+          <use xlink:href="#icon-lunzi"></use>
+        </svg>
+      </div>
       <ul class="menu">
         <li>菜单1</li>
         <li>菜单2</li>
@@ -24,7 +29,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  $color: #01635e;
+
 .topnav {
+  color: $color;
   display: flex;
   padding: 16px;
   justify-content: center;
@@ -38,6 +46,10 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
   > .menu {
     display: flex;
