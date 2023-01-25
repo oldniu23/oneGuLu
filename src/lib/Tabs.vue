@@ -12,10 +12,7 @@
     </div>
     <div class="gulu-tabs-content">
         <!-- component标签 在此的作用类似插槽 -->
-        <component class="gulu-tabs-content-item" :class="{selected: c.props.title === selected}"
-            v-for="(c, index) in defaults" :is="c" :key="index"></component>
-            <component class="gulu-tabs-content-item" :is="current" />
-            <component class="gulu-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" />
+            <component class="gulu-tabs-content-item" :is="current" :key="current.props.title" />
     </div>
 </div>
 </template>
@@ -81,7 +78,6 @@ export default {
         const select = (title:string) => {
             context.emit('update:selected',title)
         }
-
         return { defaults, titles, select, current, navItems, indicator, container }
     }
 }
@@ -120,12 +116,6 @@ $border-color: #d9d9d9;
     }
     &-content {
         padding: 8px 0;
-        &-item {
-            display: none;
-            &.selected {
-                display: block;
-            }
-        }
     }
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
-      <h1>轮子UI</h1>
-      <h2>一个不太好用的UI框架</h2>
+      <h1>①个轮子</h1>
+      <h2>简单实用的UI框架</h2>
       <p class="actions">
         <a href="#">Github</a>
         <router-link to="/doc">开始</router-link>
@@ -20,13 +20,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.topnavAndBanner {
+  // 使用cssgradient.io生成渐变色
+background: linear-gradient(145deg, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
   > .actions {
     padding: 8px 0;
     a {
