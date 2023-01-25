@@ -39,6 +39,7 @@ $color: #01635e;
 .topnavAndBanner {
   // 使用cssgradient.io生成渐变色
   background: linear-gradient(145deg, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
   > svg {
