@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="topnav">
-      <div class="logo">
+      <router-link to="/" class="logo" title="首页">
         <!-- LOGO -->
-        <svg class="icon">
+        <svg class="icon" >
           <use xlink:href="#icon-lunzi"></use>
         </svg>
-      </div>
+      </router-link>
       <ul class="menu">
         <!-- <li>菜单1</li>
         <li>菜单2</li> -->
@@ -14,7 +14,10 @@
           <router-link to="/doc">文档</router-link>
         </li>
       </ul>
-      <span class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible"></span>
+      <svg class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible">
+        <use xlink:href="#icon-caidan">
+        </use>
+      </svg>
     </div>
   </div>
 </template>
@@ -71,12 +74,12 @@ export default {
   > .toggleAside {
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    cursor: pointer;
   }
 
   @media (max-width: 500px) {
