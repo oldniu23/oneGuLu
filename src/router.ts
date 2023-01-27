@@ -26,6 +26,9 @@ export const router = createRouter({
         //   redirect:"ButtonDemo"
         // 被重定向到的路由可能需要加一个name:"ButtonDemo"
         // },
+        {path: 'intro', component: () => import ("./views/Intro.vue")},
+        {path: 'get-start', component: () => import("./views/GetStart.vue")},
+        {path: 'install', component: () => import("./views/install.vue")},
         {path: 'switch', component: () => import ("./components/SwitchDemo.vue") },
         {path: 'button', component: () => import("./components/ButtonDemo.vue") },
         {path: 'dialog', component: DialogDemo },
