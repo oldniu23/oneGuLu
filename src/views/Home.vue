@@ -12,15 +12,36 @@
       </div>
     </div>
     <div class="features">
-      <svg class="icon">
-        <use xlink:href="#icon-Vue"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-ts"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-light"></use>
-      </svg>
+      <ul>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-Vue"></use>
+          </svg>
+          <div class="descText">
+            <h3><strong>基于 Vue 3</strong></h3>
+              <p>使用了 Vue 3 Composition API</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-ts"></use>
+          </svg>
+          <div class="descText">
+            <h3><strong>基于 TypeScript</strong></h3>
+            <p>源代码采用 TypeScript 书写（非严格检查）</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-light"></use>
+          </svg>
+          <div class="descText">
+            <h3><strong>代码易读</strong></h3>
+            <p>每个组件的源代码都极其简洁</p>
+          </div>
+        </li>
+      </ul>
+
     </div>
   </div>
 </template>
@@ -31,6 +52,7 @@ export default {
     Topnav,
   },
 };
+
 </script>
 <style lang="scss" scoped>
 $green: #02bcb0;
@@ -42,9 +64,42 @@ $color: #01635e;
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
-  > svg {
-    height: 64px;
-    width: 64px;
+  // TODO 移动端适配 有些手机宽度不足400px怎么办
+  margin: 64px auto;
+  width: 400px;
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+    
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 16px 0;
+      
+      > svg {
+        height: 64px;
+        width: 64px;
+      }
+      > .descText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items:  flex-start;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        padding-left: 12px;
+      }
+    }
   }
 }
 .banner {

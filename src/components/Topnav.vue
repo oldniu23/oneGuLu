@@ -8,16 +8,25 @@
         </svg>
       </div>
       <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
+        <!-- <li>菜单1</li>
+        <li>菜单2</li> -->
+        <li>
+          <router-link to="/doc">文档</router-link>
+        </li>
       </ul>
-      <span class="toggleAside" @click="toggleMenu"></span>
+      <span class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible"></span>
     </div>
   </div>
 </template>
 <script lang='ts'>
 import { inject, Ref } from "vue";
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   //App.vue里用了provide 这里用了inject 并声明了类型为Ref
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
