@@ -12,7 +12,7 @@
             </div>
             <div class="demo-code">
                 <!-- <pre>&lt;Switch v-model:value="bool" /&gt;</pre> -->
-                <pre>{{ Switch1Demo.__sourceCode }}</pre>
+                <pre class="language-html" v-html="Prism.highlight(Switch1Demo.__sourceCode,Prism.languages.html, 'html')" />
             </div>
         </div>
         <div class="demo">
@@ -26,23 +26,27 @@
             </div>
             <div class="demo-code">
                 <!-- <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre> -->
-                <pre>{{ Switch2Demo.__sourceCode }}</pre>
+                <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode,Prism.languages.html, 'html')">{{ Switch2Demo.__sourceCode }}</pre>
             </div>
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import { ref } from 'vue'
 import Switch from '../lib/Switch.vue'
 import Button from '../lib/Button.vue'
 import Switch1Demo from '../components/Switch1demo.vue'
 import Switch2Demo from '../components/Switch2demo.vue'
+import 'prismjs'
+import 'prismjs/themes/prism.css'
+
+const Prism = (window as any).Prism
 
 export default {
-    components: {Switch, Button},
+    components: {Switch, Button, Prism},
     setup(){
         const bool = ref(false)
-        return { bool, Switch1Demo, Switch2Demo}
+        return { bool, Switch1Demo, Switch2Demo, Prism}
     }
 }
 </script>
