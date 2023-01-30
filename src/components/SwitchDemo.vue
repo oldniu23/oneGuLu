@@ -7,17 +7,15 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-import CodeDemo from './CodeDemo.vue'
 import Switch1Demo from './Switch1Demo.vue'
 import Switch2Demo from './Switch2Demo.vue'
+import CodeDemo from './CodeDemo.vue'
 
 
 export default {
     components: {CodeDemo},
     setup(){
-        const bool = ref(false)
-        return { bool, Switch1Demo, Switch2Demo }
+        return { Switch1Demo, Switch2Demo }
     }
 }
 </script>

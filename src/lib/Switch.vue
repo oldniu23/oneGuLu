@@ -18,8 +18,8 @@ export default {
     setup(props,context){
         // props-value 用于控制class(gulu-checked) toggle用于切换props的value
         const toggle = ()=>{
+            
             context.emit('update:value',!props.value)
-            // console.log(props.value,"????");
         }
         return {toggle}
     }
