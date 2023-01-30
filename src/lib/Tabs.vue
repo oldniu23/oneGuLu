@@ -32,7 +32,6 @@ export default {
         const navItems = ref< HTMLDivElement[] >([])
         // 蓝色下划线标签 用于下面获取下划线宽度
         const indicator = ref< HTMLDivElement >(null)
-        // 
         const container = ref< HTMLDivElement >(null)
 
         const x = () => {
@@ -48,14 +47,12 @@ export default {
             // 获取container的左坐标 获取当前选中的div的左坐标
             const { left: left1 } = container.value.getBoundingClientRect()
             const { left: left2 } = result.getBoundingClientRect()
-            // console.log(left1,left2,"?????>>>");
             const left = left2 - left1
             indicator.value.style.left = left + 'px'
         }
         // onMounted只在第一次渲染执行
         onMounted(x) 
         onUpdated(x)
-        // console.log(context.slots.default(),"11");
         const defaults = context.slots.default();
         // console.log(defaults,">>>>");
         defaults.forEach((tag => {

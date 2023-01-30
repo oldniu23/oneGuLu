@@ -1,12 +1,7 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-// import SwitchDemo from "./components/SwitchDemo.vue"
-import ButtonDemo from "./components/ButtonDemo.vue"
-import DialogDemo from "./components/DialogDemo.vue"
-import TabsDemo from "./components/TabsDemo.vue"
-import DocDemo from "./components/DocDemo.vue"
-// 这里的demo可以试试路由懒加载
+import Intro from "./views/Intro.vue";
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -20,7 +15,7 @@ export const router = createRouter({
       path: "/doc",
       component: Doc,
       children:[
-        {path: '', component: DocDemo},
+        {path: '', redirect: '/doc/Intro'},
         // {
         //   path:"",
         //   redirect:"ButtonDemo"
@@ -31,8 +26,9 @@ export const router = createRouter({
         {path: 'install', component: () => import("./views/install.vue")},
         {path: 'switch', component: () => import ("./components/SwitchDemo.vue") },
         {path: 'button', component: () => import("./components/ButtonDemo.vue") },
-        {path: 'dialog', component: DialogDemo },
-        {path: 'tabs', component: TabsDemo}
+        {path: 'dialog',  component: () => import("./components/DialogDemo.vue") },
+        {path: 'tabs',  component: () => import("./components/TabsDemo.vue") },
+
       ]
     },
   ],

@@ -8,8 +8,6 @@
         </svg>
       </router-link>
       <ul class="menu">
-        <!-- <li>菜单1</li>
-        <li>菜单2</li> -->
         <li>
           <router-link to="/doc">文档</router-link>
         </li>
@@ -54,7 +52,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   > .logo {
     max-width: 6em;
     margin-right: auto;
