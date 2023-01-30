@@ -1,20 +1,10 @@
 <template>
-    <div>Button示例</div>
-    <div>
-        <code-demo :component="Button1Demo"/>
-    </div>
-    <div>
-        <code-demo :component="Button2Demo"/>
-    </div>
-    <div>
-        <code-demo :component="Button3Demo" />
-    </div>
-    <div>
-        <code-demo :component="Button4Demo" />
-    </div>
-    <div>
-        <code-demo :component="Button5Demo" />
-    </div>
+    <h1>Button示例</h1>
+    <code-demo :component="Button1Demo"/>
+    <code-demo :component="Button2Demo"/>
+    <code-demo :component="Button3Demo" />
+    <code-demo :component="Button4Demo" />
+    <code-demo :component="Button5Demo" />
 </template>
 <script lang="ts">
 import Button from '../lib/Button.vue'

@@ -1,36 +1,17 @@
 <template>
-    <div>Dialog示例</div>
-    <h1>示例1</h1>
-    <Button @click="toogle">toggle</Button>
-    <Dialog v-model:visible="x" :closeOnClickOverlay="false" 
-        :ok="x1" :cancel="x2"    
-    >
-    <div>第一行</div>
-    <div>第二行</div>
-    <div>第三行</div>
-    </Dialog>
+    <h1>Dialog示例</h1>
+    <code-demo :component="Dialog1Demo" />
+    <code-demo :component="Dialog2Demo" />
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
-import Button from "../lib/Button.vue"
-import Dialog from "../lib/Dialog.vue"
+import CodeDemo from './CodeDemo.vue';
+import Dialog1Demo from "../components/Dialog1Demo.vue"
+import Dialog2Demo from "../components/Dialog2Demo.vue"
 export default {
-    components: { Button, Dialog },
+  components: { CodeDemo },
     setup() {
-        const x = ref(false);
-        const toogle = () => {
-            // 注意这里是用x.value而不是x
-            x.value = !x.value;
-        }
-        const x1 = () => {
-            return false
-        }
-        const x2 = () => {
-            console.log("cancel...........");
-            
-        }
-        return { x, toogle, x1, x2 }
+        return { Dialog1Demo, Dialog2Demo }
     }
 }
 </script>
