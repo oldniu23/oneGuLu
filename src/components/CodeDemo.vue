@@ -31,7 +31,7 @@ export default {
         const htmlCode = computed(()=>{
            return Prism.highlight(props.component.__sourceCode,Prism.languages.html, 'html')
         }) 
-        const codeVisible = ref(true)
+        const codeVisible = ref(false)
         return {
             Prism,
             htmlCode,
