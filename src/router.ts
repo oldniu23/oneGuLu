@@ -21,7 +21,7 @@ export const router = createRouter({
       path: "/doc",
       component: Doc,
       children:[
-        {path: '', redirect: '/doc/Intro'},
+        {path: '', redirect: '/doc/intro'},
         // {path: 'intro', component: () => import ("./views/Intro.vue")},
         {path: 'intro', component: Intro},
         {path: 'get-start', component: GetStart},
