@@ -72,7 +72,7 @@ $grey: grey;
     box-shadow: 0 1px 0 fade-out($color: #000000, $amount: 0.95);
     margin-right: 8px;
     
-    &:focus {
+    &:focus,&:hover {
         color: $blue;
         border-color: $blue;
     };
