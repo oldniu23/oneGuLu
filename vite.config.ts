@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-nocheck  用ts语法但不参与检查
 import { md } from "./plugins/md";
 import fs from 'fs'
 import { baseParse } from '@vue/compiler-core'

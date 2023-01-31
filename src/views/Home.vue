@@ -28,7 +28,7 @@
           </svg>
           <div class="descText">
             <h3><strong>基于 TypeScript</strong></h3>
-            <p>源代码采用 TypeScript 书写（非严格检查）</p>
+            <p>源代码采用 TypeScript 书写</p>
           </div>
         </li>
         <li>
@@ -64,14 +64,24 @@ $color: #01635e;
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
-  // TODO 移动端适配 有些手机宽度不足400px怎么办
   margin: 64px auto;
-  width: 400px;
+  padding: 0 16px ;
   @media (min-width: 800px) {
     width: 800px;
+    >ul {
+      > li{
+        width: 50%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+      >ul {
+        > li{
+          width: 33.333%;
+        }
+
+    }
   }
     
   ul {
@@ -82,7 +92,7 @@ $color: #01635e;
     li {
       display: flex;
       flex-wrap: nowrap;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       margin: 16px 0;
       
