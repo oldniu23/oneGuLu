@@ -1,7 +1,5 @@
 <template>
-        <button class="gulu-button"
-            :class="classes" :disabled="disabled"
-        >
+        <button class="gulu-button" :class="classes" :disabled="disabled">
             <span v-if="loading" class="gulu-loadingIndicator"></span>
             <slot />
         </button>      
@@ -30,7 +28,6 @@ export default {
             type: Boolean,
             defalut: true
         }
-
     },
     setup(props){
         const { theme, size, level } = props;

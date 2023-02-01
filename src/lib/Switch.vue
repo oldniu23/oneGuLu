@@ -1,7 +1,6 @@
 <template>
     <div>
-       <button class="gulu-switch" @click="toggle" 
-       :class="{'gulu-checked': value}" :disabled="disabled"
+       <button class="gulu-switch" @click="toggle" :class="{'gulu-checked': value}" :disabled="disabled"
        ><span></span></button>
     </div>
 </template>
@@ -36,7 +35,7 @@ $grey: grey;
     width: $h*2;
     border: none;
     background: #bfbfbf;
-    border-radius: $h/2;
+    border-radius: 11px;
     position: relative;
     cursor: pointer;
     > span{
@@ -46,7 +45,7 @@ $grey: grey;
         height: $h2;
         width: $h2;
         background: white;
-        border-radius: $h2/2;
+        border-radius: 9px;
         transition: all 250ms;
     }
     // gulu-checked 白球往右 背景变蓝

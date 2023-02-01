@@ -1,5 +1,5 @@
 import esbuild from 'rollup-plugin-esbuild'
-import vue from 'rollup-plugin-vue'
+import vue from '@vitejs/plugin-vue'
 import scss from 'rollup-plugin-scss'
 import dartSass from 'sass';
 import { terser } from "rollup-plugin-terser"
@@ -10,8 +10,8 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'one-gulu-ui',
-    file: 'dist/lib/oneGulu.js',
+    name: 'lunzi',
+    file: 'dist/lib/lunzi.js',
     format: 'umd',
     plugins: [terser()]
   },
