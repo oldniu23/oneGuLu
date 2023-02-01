@@ -20,7 +20,7 @@ import {Button, Tabs, Switch, Dialog} from "oneGulu-ui"
 </template>
 
 <script>
-import {Button, Tabs, Switch, Dialog} from "oneGulu-ui"
+import {Button, Tabs, Switch, Dialog} from "one-lunzi"
 export default {
     components: {Button}
 }
