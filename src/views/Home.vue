@@ -6,7 +6,7 @@
         <h1>①个轮子</h1>
         <h2>简单实用的UI框架</h2>
         <p class="actions">
-          <a href="#">Github</a>
+          <a href="https://github.com/oldniu23/oneGuLu" target="__blank">Github</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
