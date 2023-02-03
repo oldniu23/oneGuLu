@@ -114,7 +114,7 @@ $color: #01635e;
 }
 .banner {
   color: $color;
-  padding: 100px 0;
+  padding: 30px 0 70px;
   display: flex;
   justify-content: center;
   align-items: center;

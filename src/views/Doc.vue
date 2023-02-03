@@ -54,23 +54,35 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
 .layout {
-  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   height: 100vh;
   > .nav {
     flex-shrink: 0;
-  }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 21;
+    }
   > .content {
-  // border: 1px solid red;
-    
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 10px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0; 
+      padding-top: 50px;
+    }
+  }
+}
+
+::v-deep .nav { 
+  @media (min-width: 500px) {
+    > .topnav {
+      ul {
+        display: none
+      }
     }
   }
 }
@@ -86,7 +98,7 @@ export default {
   }
 }
 aside {
-  background: lightblue;
+  background: #f5f5f5;
   width: 150px;
   padding: 70px 0 16px;
   position: fixed;
@@ -96,18 +108,32 @@ aside {
   z-index: 10;
   > h2 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding: 0 20px;
   }
   > ol {
     > li {
+      position: relative;
       > a {
         display: block;
-        padding: 4px 16px;
+        padding: 7px 20px;
         text-decoration: none;
       }
       .router-link-active {
         // 路由高亮
         background: white;
+      }
+      @media (min-width: 501px) {
+        // 高亮路由右侧黑线
+        .router-link-active::after {
+          content: '';
+          display: block;
+          clear: both;
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          border-right: 2px solid black;
+        }
       }
     }
   }

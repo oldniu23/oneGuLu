@@ -44,11 +44,11 @@ export default {
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   // 解决doc页面里aside固定定位遮挡Topnav的问题
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
