@@ -1,4 +1,5 @@
 <template>
+    <!-- dialog2和dialog1的不同 不在html里写标签 传给openDialog组件 -->
     <template v-if="visible">  
         <!-- 把dialog弹框放到body下 -->
         <Teleport to="body"> 
@@ -8,10 +9,10 @@
             <div class="gulu-dialog-wrapper">
                 <div class="gulu-dialog">
                     <header>
-                        {{title}}
+                        <slot name="title" /> 
                         <span @click="close" class="gulu-dialog-close"></span></header>
                     <main>
-                        <slot />
+                        <slot name="content" />
                     </main>
                     <footer>
                         <Button @click="cancel">关闭</Button>
@@ -90,14 +91,14 @@ $border-color: #d9d9d9;
         width: 100%;
         height: 100%;
         background: fade-out($color: black, $amount: 0.5);
-        z-index: 10;
+        z-index: 21;
     }
     &-wrapper {
         position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        z-index: 11;
+        z-index: 22;
     }
     >header {
         padding: 12px 16px;

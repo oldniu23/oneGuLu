@@ -8,7 +8,7 @@
             <Button>普通按钮</Button>
             <Button level="danger">危险按钮</Button>
         </div>
-        <div>
+        <div class="button-level">
             <Button theme="text" level="main">主要文本按钮</Button>
             <Button theme="text">普通文本按钮</Button>
             <Button theme="text" level="danger">危险文本按钮</Button>
@@ -28,3 +28,8 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.button-level {
+    margin: 6px 0;
+}
+</style>
