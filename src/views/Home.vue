@@ -66,28 +66,34 @@ $color: #01635e;
 .features {
   margin: 64px auto;
   padding: 0 16px ;
+
   @media (min-width: 800px) {
-    width: 800px;
-    >ul {
+    width: 100%;
+    > ul {
       > li{
         width: 50%;
       }
     }
   }
   @media (min-width: 1200px) {
-    width: 1200px;
-      >ul {
-        > li{
-          width: 33.333%;
-        }
-
+    // width: 1200px;
+    > ul {
+      > li{
+        width: 33.333%;
+      }
     }
   }
-    
+  @media (max-width: 800px) {
+    > ul {
+      > li{
+        width: 100%;
+      }
+    }
+  }
   ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // justify-content: space-between;
+    // align-items: center;
     flex-wrap: wrap;
     li {
       display: flex;
@@ -95,7 +101,6 @@ $color: #01635e;
       justify-content: center;
       align-items: center;
       margin: 16px 0;
-      
       > svg {
         height: 64px;
         width: 64px;
